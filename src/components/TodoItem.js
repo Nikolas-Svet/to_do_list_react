@@ -1,4 +1,3 @@
-// src/components/TodoItem.js
 import React, { useState } from 'react';
 import DeleteModal from './DeleteModal';
 import EditModal from './EditModal';
@@ -22,8 +21,6 @@ function TodoItem({ task, index, removeTask, updateTask, moveTask }) {
   const handleEdit = () => {
     setShowEditModal(true);
   };
-
-  // Функции для обработки перетаскивания
   const handleDragStart = (e) => {
     e.dataTransfer.setData('taskIndex', index);
   };
