@@ -49,25 +49,24 @@ function TodoItem({task, index, removeTask, updateTask, moveTask}) {
                 </div>
                 <span className="cancel" onClick={handleDelete}></span>
 
-
-                {showDeleteModal && (
-                    <DeleteModal
-                        onConfirm={() => {
-                            removeTask(task.id);
-                            setShowDeleteModal(false);
-                        }}
-                        onCancel={() => setShowDeleteModal(false)}
-                    />
-                )}
-
-                {showEditModal && (
-                    <EditModal
-                        task={task}
-                        updateTask={updateTask}
-                        onClose={() => setShowEditModal(false)}
-                    />
-                )}
             </li>
+            {showDeleteModal && (
+                <DeleteModal
+                    onConfirm={() => {
+                        removeTask(task.id);
+                        setShowDeleteModal(false);
+                    }}
+                    onCancel={() => setShowDeleteModal(false)}
+                />
+            )}
+
+            {showEditModal && (
+                <EditModal
+                    task={task}
+                    updateTask={updateTask}
+                    onClose={() => setShowEditModal(false)}
+                />
+            )}
             {isPanelOpen && (
                 <div className="panel_task">
                     <div className="panel_task__content">
